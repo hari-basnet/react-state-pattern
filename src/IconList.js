@@ -1,6 +1,6 @@
 import React from "react";
 
-class Iconlist extends React.Component {
+class IconList extends React.Component {
   static defaultProps = {
     options: [
       "angry",
@@ -18,13 +18,14 @@ class Iconlist extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { icons: [] };
+    this.state = { icons: ["bone"] };
     this.addIcon = this.addIcon.bind(this);
   }
 
   addIcon() {
     let idx = Math.floor(Math.random() * this.props.options.length);
-    let newIcon = this.state.options[idx];
+    let newIcon = this.props.options[idx];
+    this.setState({ icons: [...this.state.icons, newIcon] });
   }
   render() {
     const icons = this.state.icons.map(i => <i className={`fas fa-${i}`} />);
@@ -37,4 +38,4 @@ class Iconlist extends React.Component {
   }
 }
 
-export default Iconlist;
+export default IconList;

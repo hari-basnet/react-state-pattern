@@ -1,13 +1,13 @@
 import React from "react";
 import "./app.css";
-import Iconlist from "./Iconlist";
+import IconList from "./IconList";
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <h1>Hello form My app</h1>
-        <Iconlist />
+        <IconList />
       </div>
     );
   }
